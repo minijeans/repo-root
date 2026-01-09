@@ -29,7 +29,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: validate   # ?? ?? ???? update ?? ? ?? ? validate? ??
+      ddl-auto: update   # ?? ?? ???? update ?? ? ?? ? validate? ??
     properties:
       hibernate:
         show_sql: true
@@ -46,8 +46,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${RDS_ENDPOINT:my-prod-database}:3306/myapp?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: ${MYSQL_USER}
-    password: ${MYSQL_PASSWORD}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
